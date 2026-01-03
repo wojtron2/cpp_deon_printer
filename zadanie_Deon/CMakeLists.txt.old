@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.16)
+project(deon_printer_app LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_executable(deon_printer_app
+    src/main.cpp
+    src/serial_port.cpp
+    src/money_utils.cpp
+    src/novitus_protocol.cpp
+    src/receipt_logic.cpp
+)
+
+target_include_directories(deon_printer_app
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
